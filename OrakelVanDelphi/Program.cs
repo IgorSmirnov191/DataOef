@@ -11,8 +11,10 @@ namespace OrakelVanDelphi
     {
         static void Main(string[] args)
         {
+            /// Cc
             Random rd_Orakel = new Random();
             Console.WriteLine ($"Je zal nog {rd_Orakel.Next(5,125)} jaar leven.");
+            Console.WriteLine(" Hello ");
         }
     }
 }
