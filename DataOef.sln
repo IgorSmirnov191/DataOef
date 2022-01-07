@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1738
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GemiddeldeVan3", "DataOef\GemiddeldeVan3.csproj", "{7495338A-7EB5-4694-A5AB-AC0A02634E40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricFun", "GeometricFun\GeometricFun.csproj", "{7EAA40C9-8F64-4232-B6DE-A79A09B7489D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpDePoef", "OpDePoef\OpDePoef.csproj", "{F6BD1FB0-D6F2-4F99-95E0-DB761F1CB32B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feestkassa", "Feestkassa\Feestkassa.csproj", "{C2053864-795E-4F79-B1BC-4CDDF6CA8ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrakelVanDelphi", "OrakelVanDelphi\OrakelVanDelphi.csproj", "{9E4AFA44-9E5F-43D2-A4F9-D7925A4DE579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleInteger", "..\ConsoleApp4\ConsoleApp4\DoubleInteger.csproj", "{33FA53E9-DF1D-491F-BD5F-EF22C2AAE31B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7495338A-7EB5-4694-A5AB-AC0A02634E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7495338A-7EB5-4694-A5AB-AC0A02634E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7495338A-7EB5-4694-A5AB-AC0A02634E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7495338A-7EB5-4694-A5AB-AC0A02634E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EAA40C9-8F64-4232-B6DE-A79A09B7489D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EAA40C9-8F64-4232-B6DE-A79A09B7489D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EAA40C9-8F64-4232-B6DE-A79A09B7489D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EAA40C9-8F64-4232-B6DE-A79A09B7489D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6BD1FB0-D6F2-4F99-95E0-DB761F1CB32B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6BD1FB0-D6F2-4F99-95E0-DB761F1CB32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6BD1FB0-D6F2-4F99-95E0-DB761F1CB32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6BD1FB0-D6F2-4F99-95E0-DB761F1CB32B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2053864-795E-4F79-B1BC-4CDDF6CA8ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2053864-795E-4F79-B1BC-4CDDF6CA8ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2053864-795E-4F79-B1BC-4CDDF6CA8ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2053864-795E-4F79-B1BC-4CDDF6CA8ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E4AFA44-9E5F-43D2-A4F9-D7925A4DE579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E4AFA44-9E5F-43D2-A4F9-D7925A4DE579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E4AFA44-9E5F-43D2-A4F9-D7925A4DE579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E4AFA44-9E5F-43D2-A4F9-D7925A4DE579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33FA53E9-DF1D-491F-BD5F-EF22C2AAE31B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33FA53E9-DF1D-491F-BD5F-EF22C2AAE31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33FA53E9-DF1D-491F-BD5F-EF22C2AAE31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33FA53E9-DF1D-491F-BD5F-EF22C2AAE31B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FC89424-6AD0-4EAD-B05E-DA685255FD34}
+	EndGlobalSection
+EndGlobal
