@@ -11,20 +11,20 @@ namespace OpDePoef
     {
         static void Main(string[] args)
         {
-            double d_PoefCassa = 0.0;
-            string s_Invoer;
+            double poefKassa = 0.0;
+            string invoer;
             for (int i = 0; i < 5; i++)
             {
                 Console.Write("Voer bedrag in? ");
-                s_Invoer = Console.ReadLine();
-                d_PoefCassa += double.Parse(s_Invoer.Trim(), CultureInfo.InvariantCulture);
-                Console.WriteLine($"De poef staat op " +
-                    $"{d_PoefCassa.ToString("##.##", CultureInfo.InvariantCulture)} euro");
+                invoer = Console.ReadLine();
+                poefKassa += double.Parse(invoer.Trim(), CultureInfo.InvariantCulture);
+                Console.WriteLine($"De poef staat op" +
+                    $" {poefKassa.ToString("##.##", CultureInfo.InvariantCulture)} euro");
             }
            Console.WriteLine("*************************");
            Console.WriteLine($"Het totaal van  de poef is " +
-               $"{d_PoefCassa.ToString("##.##", CultureInfo.InvariantCulture)}" +
-               $" en zal {Math.Round(d_PoefCassa / 10)} " +
+               $"{poefKassa.ToString("##.##", CultureInfo.InvariantCulture)}" +
+               $" en zal {Math.Round(poefKassa / 10)} " +
                $"weken duren om volledig afbetaald te worden");
 
         }
