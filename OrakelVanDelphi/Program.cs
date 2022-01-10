@@ -14,7 +14,7 @@ namespace OrakelVanDelphi
         const string inputLeeftijdVraag = "Tik uw leeftijd aub ?";
         const int leeftijdVrouwMax = 150;
         const int leeftijdManMax = 120;
-        public static void Orakeltje(char geslachtChar, int leeftijdValue)
+        public static bool Orakeltje(char geslachtChar, int leeftijdValue)
         {
             Random rd_Orakel = new Random();
             if (geslachtChar == 'v' || geslachtChar == 'V')
@@ -28,7 +28,10 @@ namespace OrakelVanDelphi
             else
             {
                 Console.WriteLine(inputError);
+                return false;
+
             }
+            return true;
         }
         static void Main(string[] args)
         {
@@ -43,8 +46,7 @@ namespace OrakelVanDelphi
                 Console.WriteLine();
                 Console.Write(inputLeeftijdVraag);
                 inputLeeftijd = int.Parse(Console.ReadLine());
-                Orakeltje(cki_Key.KeyChar, inputLeeftijd);
-                inputCorrect = true;
+                inputCorrect = Orakeltje(cki_Key.KeyChar, inputLeeftijd);
             }
             catch (Exception e)
             { 
