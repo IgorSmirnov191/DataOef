@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleInteger", "..\Console
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMI", "BMI\BMI.csproj", "{DBFF3BBE-EEED-4952-A952-958BACFA03E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz", "Quiz\Quiz.csproj", "{BF24AF87-8CF7-4C1C-9845-6BD6B0F098DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumSeizoenen", "EnumSeizoenen\EnumSeizoenen.csproj", "{84FD4632-F2AC-4D82-9CC9-F81979D40CB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{DBFF3BBE-EEED-4952-A952-958BACFA03E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBFF3BBE-EEED-4952-A952-958BACFA03E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBFF3BBE-EEED-4952-A952-958BACFA03E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF24AF87-8CF7-4C1C-9845-6BD6B0F098DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF24AF87-8CF7-4C1C-9845-6BD6B0F098DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF24AF87-8CF7-4C1C-9845-6BD6B0F098DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF24AF87-8CF7-4C1C-9845-6BD6B0F098DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84FD4632-F2AC-4D82-9CC9-F81979D40CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84FD4632-F2AC-4D82-9CC9-F81979D40CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84FD4632-F2AC-4D82-9CC9-F81979D40CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84FD4632-F2AC-4D82-9CC9-F81979D40CB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
