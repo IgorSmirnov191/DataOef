@@ -8,31 +8,39 @@ namespace Quiz
 {
     internal class Program
     {
-        static int QuizResult(string correctAntwoord)
+        public enum Antwoord
+        {
+            None    = 0b_0000_0000, //0
+            A       = 0b_0000_1000, //8
+            B       = 0b_0000_0100, //4
+            C       = 0b_0000_0010, //2
+            D       = 0b_0000_0001  //1
+        }
+        static int QuizResult(Antwoord correctAntwoord)
         {
             int result;
             ConsoleKeyInfo cki_Key = Console.ReadKey();
 
             switch (cki_Key.Key)
             {
-                case ConsoleKey.A: //1000
+                case ConsoleKey.A: 
                     {
-                        result = ("1000" == correctAntwoord) ? 2 : -1;
+                        result = (Antwoord.A == correctAntwoord) ? 2 : -1;
                         break;
                     }
-                case ConsoleKey.B: //0100
+                case ConsoleKey.B: 
                     {
-                        result = ("0100" == correctAntwoord) ? 2 : -1;
+                        result = (Antwoord.B == correctAntwoord) ? 2 : -1;
                         break;
                     }
-                case ConsoleKey.C://0010
+                case ConsoleKey.C:
                     {
-                        result = ("0010" == correctAntwoord) ? 2 : -1;
+                        result = (Antwoord.C == correctAntwoord) ? 2 : -1;
                         break;
                     }
-                case ConsoleKey.D: //0001
+                case ConsoleKey.D: 
                     {
-                        result = ("0001" == correctAntwoord) ? 2 : -1;
+                        result = (Antwoord.D == correctAntwoord) ? 2 : -1;
                         break;
                     }
                 default:
@@ -47,7 +55,7 @@ namespace Quiz
         
         static void Main(string[] args)
         {
-            string[] quizAntwoord = { "0100", "1000", "0001" };
+            Antwoord[] quizCorrectAntwoorden = { Antwoord.B, Antwoord.A, Antwoord.D };
             int result = 0;
            
             for (int i = 0; i < 3; i++)
@@ -55,7 +63,7 @@ namespace Quiz
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red + i;
                 Console.WriteLine($"Voer het antwoord op vraag n.{i+1} (a,b,c of d) ? ");
-                result += QuizResult(quizAntwoord[i]);
+                result += QuizResult(quizCorrectAntwoorden[i]);
             }
             Console.Clear();
             Console.ResetColor();
