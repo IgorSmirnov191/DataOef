@@ -9,7 +9,7 @@ namespace OrakelVanDelphi
 {
     class Program
     {
-        const string inputError = "Invoer bevat de fout. Probeer het opnieuw...";
+        const string inputError = "Invoer bevat een fout. Probeer het opnieuw...";
         const string inputGeslacht = "Bent u een vrouw(v) of een man(m) ?";
         const string inputLeeftijdVraag = "Tik uw leeftijd aub ?";
         const int leeftijdVrouwMax = 150;
@@ -37,8 +37,8 @@ namespace OrakelVanDelphi
         {
             ConsoleKeyInfo cki_Key;
             int inputLeeftijd;
-            bool inputCorrect = false;
-            while(!inputCorrect)
+            bool isInputCorrect = false;
+            while(!isInputCorrect)
             try
             {
                 Console.Write(inputGeslacht);
@@ -46,16 +46,13 @@ namespace OrakelVanDelphi
                 Console.WriteLine();
                 Console.Write(inputLeeftijdVraag);
                 inputLeeftijd = int.Parse(Console.ReadLine());
-                inputCorrect = Orakeltje(cki_Key.KeyChar, inputLeeftijd);
+                isInputCorrect = Orakeltje(cki_Key.KeyChar, inputLeeftijd);
             }
             catch (Exception e)
             { 
-                    inputCorrect = false;
+                    isInputCorrect = false;
                     Console.WriteLine(inputError);
-
             }
-            
-
         }
     }
 }

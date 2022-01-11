@@ -16,21 +16,22 @@ namespace BMI
         const double lengteMax = 2.72; // de gootste man ter wereld ooit - Robert Wadlow
         const double lengteMin = 0.0;
         public enum GewichtenSorten {None = -1, OnvoldoendeGewicht, NormalGewicht, PreObees, Obees, ErnstigeZwaarlijvigheid }
+        //
         public static GewichtenSorten GetGewichtenSorten(double bodyMassIndex)
         {
             if (bodyMassIndex > 0 && bodyMassIndex < 18.5)
             {
                 return GewichtenSorten.OnvoldoendeGewicht;
             }
-            else if (bodyMassIndex >= 18.5 && bodyMassIndex < 24.9)
+            else if ( bodyMassIndex < 24.9)
             {
                 return GewichtenSorten.NormalGewicht;
             }
-            else if (bodyMassIndex >= 24.9 && bodyMassIndex < 29.9)
+            else if ( bodyMassIndex < 29.9)
             {
                 return GewichtenSorten.PreObees;
             }
-            else if (bodyMassIndex >= 29.9 && bodyMassIndex < 39.9)
+            else if (bodyMassIndex < 39.9)
             {
                 return GewichtenSorten.Obees;
             }

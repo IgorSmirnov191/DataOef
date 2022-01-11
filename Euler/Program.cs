@@ -16,7 +16,7 @@ namespace Euler
                 if (i % 3 == 0 || i % 5 == 0)
                 {
                     if (i != 0) Console.Write($"{i} ");
-                    som = som + i;
+                    som += i;
                     if(som >= 234168) // som  heeft de limiet van 234168 bereikt
                     { 
                         Console.WriteLine($"\nDe loop was force " +

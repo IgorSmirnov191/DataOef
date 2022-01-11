@@ -15,7 +15,7 @@ namespace Feestkassa
         const double ijsjePrijs = 3.00;
         const double drankPrijs = 2.00;
 
-        public static double Voorwerp(string naam, double prijs, ref string value)
+        public static double BerekenTussenPrijs(string naam, double prijs, ref string value)
         {
             Console.WriteLine(naam);
             int aantal = int.Parse(Console.ReadLine());
@@ -35,11 +35,11 @@ namespace Feestkassa
 
         static void Main(string[] args)
         {
-            string s_TussenPrijs = ""; 
-            double tussenPrijs = Voorwerp("Frietjes?", mosselenMetFrietjesJPrijs, ref s_TussenPrijs);
-            tussenPrijs += Voorwerp("Koninginenhapjes ?", koninginenhapjePrijs, ref s_TussenPrijs);
-            tussenPrijs += Voorwerp("Ijsjes?", ijsjePrijs, ref s_TussenPrijs);
-            tussenPrijs += Voorwerp("Dranken ?", drankPrijs, ref s_TussenPrijs);
+            string tussenPrijsBedragString = ""; 
+            double tussenPrijs = BerekenTussenPrijs("Frietjes?", mosselenMetFrietjesJPrijs, ref tussenPrijsBedragString);
+            tussenPrijs += BerekenTussenPrijs("Koninginenhapjes ?", koninginenhapjePrijs, ref tussenPrijsBedragString);
+            tussenPrijs += BerekenTussenPrijs("Ijsjes?", ijsjePrijs, ref tussenPrijsBedragString);
+            tussenPrijs += BerekenTussenPrijs("Dranken ?", drankPrijs, ref tussenPrijsBedragString);
 
             Console.WriteLine($"Het totaal te betalen bedrag is" +
                 $" {tussenPrijs.ToString("#.## EURO", CultureInfo.InvariantCulture)}");

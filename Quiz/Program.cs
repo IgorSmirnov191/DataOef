@@ -20,7 +20,6 @@ namespace Quiz
         {
             int result;
             ConsoleKeyInfo cki_Key = Console.ReadKey();
-
             switch (cki_Key.Key)
             {
                 case ConsoleKey.A: 
@@ -68,7 +67,6 @@ namespace Quiz
             Console.Clear();
             Console.ResetColor();
             Console.WriteLine($"U bent op {result} punten gescoord");
-
         }
     }
 }

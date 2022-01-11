@@ -12,11 +12,10 @@ namespace OpDePoef
         static void Main(string[] args)
         {
             double poefKassa = 0.0;
-            string invoer;
             for (int i = 0; i < 5; i++)
             {
                 Console.Write("Voer bedrag in? ");
-                invoer = Console.ReadLine();
+                string invoer = Console.ReadLine();
                 poefKassa += double.Parse(invoer.Trim(), CultureInfo.InvariantCulture);
                 Console.WriteLine($"De poef staat op" +
                     $" {poefKassa.ToString("##.##", CultureInfo.InvariantCulture)} euro");

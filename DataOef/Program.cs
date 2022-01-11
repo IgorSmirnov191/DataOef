@@ -10,7 +10,6 @@ namespace GemiddeldeVan3
     class Program
     {
         const string inputError = "Invoer bevat de fout. Probeer het opnieuw...";
-
         static void Main(string[] args)
         {
             double getaalEen = 1.0;
@@ -47,13 +46,8 @@ namespace GemiddeldeVan3
                     catch (System.FormatException)
                     {
                         Console.WriteLine(inputError);
-
                     }
-
                 }
-            
-
-
         }
     }
 }
