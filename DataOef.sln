@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz", "Quiz\Quiz.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumSeizoenen", "EnumSeizoenen\EnumSeizoenen.csproj", "{84FD4632-F2AC-4D82-9CC9-F81979D40CB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euler", "Euler\Euler.csproj", "{44826E5B-068A-43F5-ACC3-8C4B032CB07D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{84FD4632-F2AC-4D82-9CC9-F81979D40CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84FD4632-F2AC-4D82-9CC9-F81979D40CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84FD4632-F2AC-4D82-9CC9-F81979D40CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44826E5B-068A-43F5-ACC3-8C4B032CB07D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44826E5B-068A-43F5-ACC3-8C4B032CB07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44826E5B-068A-43F5-ACC3-8C4B032CB07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44826E5B-068A-43F5-ACC3-8C4B032CB07D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
