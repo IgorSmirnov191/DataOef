@@ -8,23 +8,29 @@ namespace EnumSeizoenen
 {
     internal class Program
     {
-        enum Seizonsgroepen { koude, warme};
-        enum Seizoenen { winter, lente, zomer, herfst };
-        enum Maanden {januari = 1, februari, maart, april, mei, juni, juli, augustus, september, oktober, november, december};
+        enum Seizonsgroepen {None, Koude, Warme};
+        enum Seizoenen { None, Winter, Lente, Zomer, Herfst };
+        enum Maanden {None, Januari, Februari, Maart, April, Mei, Juni, Juli,
+            Augustus, September, Oktober, November, December};
         const string inputError = "Invoer bevat de fout. Probeer het opnieuw...";
         static void Main(string[] args)
         {
-            string[] seisonsgroenen = { "koude", "varme"};
-            string[] maanden = { "none", "januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"};
-            string[] seizoenen = { "winter"," lente","zomer","herfst"};
+            string[] seizoenengroenen = { "none","koude", "warme"};
+            string[] maanden = { "none", "januari", "februari", "maart", "april", 
+                "mei", "juni", "juli", "augustus", "september", "oktober", 
+                "november", "december"};
+            string[] seizoenen = {"none", "winter","lente","zomer","herfst"};
             bool inputExit = false;
             Console.WriteLine("Tik 0 om te kunnen stoppen");
             while (!inputExit)
                 try
                 {
-                    Console.Write("Voer in maandnummer aub ?");
+                    Console.Write("Voer in maandnummer aub (1 tot 12)?");
                     int maand = int.Parse(Console.ReadLine());
-                    switch(maand)
+                    Seizonsgroepen huidigSeizoenGroep = Seizonsgroepen.None;
+                    Seizoenen huidigSeizoen = Seizoenen.None;
+
+                    switch (maand)
                     {
 
                         case 0 :
@@ -37,40 +43,60 @@ namespace EnumSeizoenen
                         case 1 :
                         case 2:
                         {
-                                Console.WriteLine($"Maand {maanden[maand]} is een {seisonsgroenen[0]} maand van {seizoenen[0]} seizoen ");
+                                huidigSeizoenGroep = Seizonsgroepen.Koude;
+                                huidigSeizoen = Seizoenen.Winter;
                                 break;
                         }
                         case 3:
+                            {
+                                huidigSeizoenGroep = Seizonsgroepen.Koude;
+                                huidigSeizoen = Seizoenen.Lente;
+                                break;
+                            }
                         case 4:
                         case 5:
                         {
-                                Console.WriteLine($"Maand {maanden[maand]} is een {seisonsgroenen[1]} maand van {seizoenen[1]} seizoen ");
+                                huidigSeizoenGroep = Seizonsgroepen.Warme;
+                                huidigSeizoen = Seizoenen.Lente; 
                                 break;
                         }
                         case 6:
                         case 7:
                         case 8:
                         {
-                                Console.WriteLine($"Maand {maanden[maand]} is een {seisonsgroenen[1]} maand van {seizoenen[2]} seizoen ");
+                                huidigSeizoenGroep = Seizonsgroepen.Warme;
+                                huidigSeizoen = Seizoenen.Zomer; 
                                 break;
                         }
                         case 9:
+                            {
+                                huidigSeizoenGroep = Seizonsgroepen.Warme;
+                                huidigSeizoen = Seizoenen.Herfst;
+                                break;
+                            }
                         case 10:
                         case 11:
                         {
-                                Console.WriteLine($"Maand {maanden[maand]} is een {seisonsgroenen[0]} maand van {seizoenen[3]} seizoen ");
+                                huidigSeizoenGroep = Seizonsgroepen.Koude;
+                                huidigSeizoen = Seizoenen.Herfst;
                                 break;
 
                         }
                         default:
                         {
                                 inputExit = false;
+                                huidigSeizoenGroep = Seizonsgroepen.None;
+                                huidigSeizoen = Seizoenen.None;
                                 Console.WriteLine(inputError);
                                 break;
 
                         }
                     }
-            
+                    if(!inputExit)
+                    Console.WriteLine($"Maand {maanden[maand]} " +
+                        $"is een {seizoenengroenen[(int)huidigSeizoenGroep]} maand " +
+                        $"van {seizoenen[(int)huidigSeizoen]} seizoen ");
+
                 }
                 catch (Exception e)
                 {
