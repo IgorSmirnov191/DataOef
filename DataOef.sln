@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euler", "Euler\Euler.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boekhouder", "Boekhouder\Boekhouder.csproj", "{4E0F86E0-0C4D-4DF4-BCC9-C12384C4601F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaadHetGetal", "RaadHetGetal\RaadHetGetal.csproj", "{C355B918-04E7-4F85-9D1E-6D7DE12641B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{4E0F86E0-0C4D-4DF4-BCC9-C12384C4601F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E0F86E0-0C4D-4DF4-BCC9-C12384C4601F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E0F86E0-0C4D-4DF4-BCC9-C12384C4601F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C355B918-04E7-4F85-9D1E-6D7DE12641B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C355B918-04E7-4F85-9D1E-6D7DE12641B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C355B918-04E7-4F85-9D1E-6D7DE12641B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C355B918-04E7-4F85-9D1E-6D7DE12641B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
