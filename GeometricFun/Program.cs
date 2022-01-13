@@ -9,7 +9,7 @@ namespace GeometricFun
 {
     class Program
     {
-        const string inputError = "Invoer bevat de fout. Probeer het opnieuw...";
+        const string inputError = "Invoer bevat een fout. Probeer het opnieuw...";
         const string messageEsc = "Klik op ESC om op elk moment te kunnen stoppen";
  
         static void Main(string[] args)
