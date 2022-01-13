@@ -11,22 +11,31 @@ namespace SteenSchaarPapier
         const string inputError = "Invoer bevat een fout. Probeer het opnieuw...";
         const string inputGebaar = "Bent u een steen(1) of een papier(2) of een schaar(3) ?";
         const int scoreWinner = 10;
+        /// <summary>
+        /// Enum with possible outcomes from Rock Paper Scissors game
+        /// </summary>
         enum SteenSchaarPapier {None, Draw , Win, Loss};
-        static SteenSchaarPapier ShowResultScore(char gebaarChar, int randomInvoer)
+        /// <summary>
+        /// Get result score from compare two play gestures
+        /// </summary>
+        /// <param name="gebaarChar"></param>
+        /// <param name="randomInvoer"></param>
+        /// <returns></returns>
+        static SteenSchaarPapier GetResultScore(char gebaarChar, int randomInvoer)
         {
             if((gebaarChar == '1' && randomInvoer == 1) 
-                || (gebaarChar =='2' && randomInvoer == 2) 
-                || (gebaarChar == '3' && randomInvoer == 3))       
-            { return SteenSchaarPapier.Draw;}
+                ||  (gebaarChar =='2' && randomInvoer == 2) 
+                ||  (gebaarChar == '3' && randomInvoer == 3))       
+                { return SteenSchaarPapier.Draw;}
             else if((gebaarChar == '1' && randomInvoer == 2) 
-                || (gebaarChar == '2' && randomInvoer == 3)
-                || (gebaarChar == '3' && randomInvoer == 1))
+                ||  (gebaarChar == '2' && randomInvoer == 3)
+                ||  (gebaarChar == '3' && randomInvoer == 1))
                 { return SteenSchaarPapier.Loss; }
-            else if ((gebaarChar == '1' && randomInvoer == 3)
-                || (gebaarChar == '2' && randomInvoer == 1)
-                || (gebaarChar == '3' && randomInvoer == 2))
+            else if((gebaarChar == '1' && randomInvoer == 3)
+                ||  (gebaarChar == '2' && randomInvoer == 1)
+                ||  (gebaarChar == '3' && randomInvoer == 2))
                 { return SteenSchaarPapier.Win; }
-         return SteenSchaarPapier.None;
+            return SteenSchaarPapier.None;
         }
         static void Main(string[] args)
         {
@@ -40,34 +49,33 @@ namespace SteenSchaarPapier
                 {
                     Console.Write(inputGebaar);
                     cki_Key = Console.ReadKey();
-                    int randomgetaal = random.Next(1, 4);
-                    SteenSchaarPapier result = ShowResultScore(cki_Key.KeyChar, randomgetaal);
+                    int randomgetaal = random.Next(1, 4); 
+                    SteenSchaarPapier result = GetResultScore(cki_Key.KeyChar, randomgetaal);
                     switch (result)
                     { 
-                        case(SteenSchaarPapier.Win):
+                            case(SteenSchaarPapier.Win):
                             {
                                 scoreUser += 1;
                                 Console.WriteLine($"\nUser won. Score User {scoreUser} : {scoreRandom} Computer");
                                 break;
                             }
-                        case (SteenSchaarPapier.Loss):
+                            case (SteenSchaarPapier.Loss):
                             {
                                 scoreRandom += 1;
                                 Console.WriteLine($"\nUser loss. Score User {scoreUser} : {scoreRandom} Computer");
                                 break;
                             }
-                        case (SteenSchaarPapier.Draw):
+                            case (SteenSchaarPapier.Draw):
                             {
                                 Console.WriteLine($"\nDraw game. Score User {scoreUser} : {scoreRandom} Computer");
                                 break;
                             }
-                        case (SteenSchaarPapier.None):
+                            case (SteenSchaarPapier.None):
                             {
                                 Console.WriteLine(inputError);
                                 isInputCorrect =false;
                                 break;
                             }
-                       
                             default:
                             {
                                 break;
