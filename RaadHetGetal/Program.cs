@@ -15,10 +15,10 @@ namespace RaadHetGetal
             int getal=0, poging = 0, aantalPogingen = 0;
             int lowrand = 0, highrand = 100, intervaal = highrand;
             int maxAantalPogingen = 0;
-            while ((intervaal=intervaal/2) != 0)
+            while ((intervaal = intervaal / 2) != 0)
             { 
                 maxAantalPogingen++; 
-            } ;
+            }
             Random rand = new Random();
             getal = rand.Next(lowrand, highrand);
             bool gevonden = false;
