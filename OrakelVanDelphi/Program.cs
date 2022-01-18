@@ -33,8 +33,8 @@ namespace OrakelVanDelphi
         {
             ConsoleKeyInfo cki_Key;
             int inputLeeftijd;
-            bool isInputCorrect = false;
-            while (!isInputCorrect)
+            bool isInputCorrect = true;
+            while (isInputCorrect)
                 try
                 {
                     Console.Write(inputGeslacht);
@@ -47,7 +47,7 @@ namespace OrakelVanDelphi
                 catch (Exception e)
                 {
                     isInputCorrect = false;
-                    Console.WriteLine(inputError);
+                    Console.WriteLine($"Error: {e.Message} " + inputError);
                 }
         }
     }
