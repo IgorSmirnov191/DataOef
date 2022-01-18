@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CaesarEncryptie
 {
-    
     internal class Program
     {
-        const string inputError = "Probeer het opnieuw...";
-        const string inputFunctie = "Wilt u een geheime bericht schrijven(e), lezen(d) of stoppen(s) ?";
-        const string inputCypherVraag = "Tik een cypher in aub ?";
-        const string inputTextVraag = "Voer een text in aub :";
-        const string alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private const string inputError = "Probeer het opnieuw...";
+        private const string inputFunctie = "Wilt u een geheime bericht schrijven(e), lezen(d) of stoppen(s) ?";
+        private const string inputCypherVraag = "Tik een cypher in aub ?";
+        private const string inputTextVraag = "Voer een text in aub :";
+        private const string alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
         public static char[] CreateAlphabet(int cypher)
         {
             string original = alfabet;
-            original = original.Substring(cypher, original.Length-cypher) + original.Substring(0, cypher);
+            original = original.Substring(cypher, original.Length - cypher) + original.Substring(0, cypher);
             return original.ToCharArray();
         }
+
         public static char[] EncryptMessage(char[] decrMessage, int cypher)
         {
             char[] originalAlfabet = alfabet.ToCharArray();
@@ -39,6 +36,7 @@ namespace CaesarEncryptie
             }
             return encrMessage.ToCharArray();
         }
+
         public static char[] DecryptMessage(char[] encrMessage, int cypher)
         {
             char[] originalAlfabet = alfabet.ToCharArray();
@@ -58,7 +56,8 @@ namespace CaesarEncryptie
 
             return decrMessage.ToCharArray();
         }
-        static void Main(string[] args)
+
+        private static void Main(string[] args)
         {
             ConsoleKeyInfo cki_Key;
             int inputCypher;
@@ -70,13 +69,12 @@ namespace CaesarEncryptie
                     Console.Write(inputFunctie);
                     cki_Key = Console.ReadKey();
                     Console.WriteLine();
-                    if ((cki_Key.KeyChar == 's'|| cki_Key.KeyChar == 'S') &&
+                    if ((cki_Key.KeyChar == 's' || cki_Key.KeyChar == 'S') &&
                         cki_Key.KeyChar != 'e' && cki_Key.KeyChar != 'E' &&
-                           cki_Key.KeyChar != 'd' && cki_Key.KeyChar != 'D' )
+                           cki_Key.KeyChar != 'd' && cki_Key.KeyChar != 'D')
                     {
                         Console.WriteLine(inputError);
                         break;
-
                     }
                     Console.Write(inputCypherVraag);
                     inputCypher = int.Parse(Console.ReadLine());
@@ -91,8 +89,6 @@ namespace CaesarEncryptie
                     {
                         Console.WriteLine(DecryptMessage(inputText.ToUpper().ToCharArray(), inputCypher));
                     }
-                    
-                    
                 }
                 catch (Exception e)
                 {

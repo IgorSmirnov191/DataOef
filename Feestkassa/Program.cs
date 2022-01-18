@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Globalization;
 
 namespace Feestkassa
 {
-    class Program
+    internal class Program
     {
-        const string tussenPrijsLeeg = "Tussenprijs = ";
-        const double mosselenMetFrietjesJPrijs = 20.00;
-        const double koninginenhapjePrijs = 10.00;
-        const double ijsjePrijs = 3.00;
-        const double drankPrijs = 2.00;
+        private const string tussenPrijsLeeg = "Tussenprijs = ";
+        private const double mosselenMetFrietjesJPrijs = 20.00;
+        private const double koninginenhapjePrijs = 10.00;
+        private const double ijsjePrijs = 3.00;
+        private const double drankPrijs = 2.00;
 
         public static double BerekenTussenPrijs(string naam, double prijs, ref string value)
         {
@@ -23,19 +19,19 @@ namespace Feestkassa
             string tussenPrijsBedragString = tussenPrijsBedrag.ToString("#.## euro", CultureInfo.InvariantCulture);
             if (value == "")
             {
-                value = tussenPrijsLeeg + tussenPrijsBedragString; 
+                value = tussenPrijsLeeg + tussenPrijsBedragString;
             }
             else
             {
-                 value += " + " + tussenPrijsBedragString;
+                value += " + " + tussenPrijsBedragString;
             }
             Console.WriteLine(value);
             return tussenPrijsBedrag;
         }
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            string tussenPrijsBedragString = ""; 
+            string tussenPrijsBedragString = "";
             double tussenPrijs = BerekenTussenPrijs("Frietjes?", mosselenMetFrietjesJPrijs, ref tussenPrijsBedragString);
             tussenPrijs += BerekenTussenPrijs("Koninginenhapjes ?", koninginenhapjePrijs, ref tussenPrijsBedragString);
             tussenPrijs += BerekenTussenPrijs("Ijsjes?", ijsjePrijs, ref tussenPrijsBedragString);

@@ -1,30 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RaadHetGetal
 {
     internal class Program
     {
-        const string errorBuitenBereik = "Oops. Het poging is buiten bereik";
-        static void Main(string[] args)
+        private const string errorBuitenBereik = "Oops. Het poging is buiten bereik";
+
+        private static void Main(string[] args)
         {
-            
-            int getal=0, poging = 0, aantalPogingen = 0;
+            int getal = 0, poging = 0, aantalPogingen = 0;
             int lowrand = 0, highrand = 100, intervaal = highrand;
             int maxAantalPogingen = 0;
             while ((intervaal = intervaal / 2) != 0)
-            { 
-                maxAantalPogingen++; 
+            {
+                maxAantalPogingen++;
             }
             Random rand = new Random();
             getal = rand.Next(lowrand, highrand);
             bool gevonden = false;
             while ((aantalPogingen < maxAantalPogingen) && !gevonden)
             {
-                Console.WriteLine($"Geef een getal tussen {lowrand} en {highrand}. U hebt nog {maxAantalPogingen-aantalPogingen} pogingen");
+                Console.WriteLine($"Geef een getal tussen {lowrand} en {highrand}. U hebt nog {maxAantalPogingen - aantalPogingen} pogingen");
                 poging = int.Parse(Console.ReadLine());
                 if (getal > poging)
                 {
@@ -36,7 +32,6 @@ namespace RaadHetGetal
                     }
                     else
                         Console.WriteLine(errorBuitenBereik);
-
                 }
                 else if (getal < poging)
                 {

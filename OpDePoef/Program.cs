@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Globalization;
 
 namespace OpDePoef
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             double poefKassa = 0.0;
             for (int i = 0; i < 5; i++)
@@ -20,12 +16,11 @@ namespace OpDePoef
                 Console.WriteLine($"De poef staat op" +
                     $" {poefKassa.ToString("##.##", CultureInfo.InvariantCulture)} euro");
             }
-           Console.WriteLine("*************************");
-           Console.WriteLine($"Het totaal van  de poef is " +
-               $"{poefKassa.ToString("##.##", CultureInfo.InvariantCulture)}" +
-               $" en zal {Math.Round(poefKassa / 10)} " +
-               $"weken duren om volledig afbetaald te worden");
-
+            Console.WriteLine("*************************");
+            Console.WriteLine($"Het totaal van  de poef is " +
+                $"{poefKassa.ToString("##.##", CultureInfo.InvariantCulture)}" +
+                $" en zal {Math.Round(poefKassa / 10)} " +
+                $"weken duren om volledig afbetaald te worden");
         }
     }
 }

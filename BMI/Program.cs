@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BMI
 {
     internal class Program
     {
-        const string inputError = "Invoer bevat de fout. Probeer het opnieuw...";
-        const string inputGewichtVraag = "Tik aub uw gewicht in kg ?";
-        const string inputLengteVraag = "Tik aub uw lengte in m ?";
-        const double gewichtMax = 727.00; // de zwaarste man ter wereld ooit - Carol Yager
-        const double gewichtMin = 0.0;
-        const double lengteMax = 2.72; // de gootste man ter wereld ooit - Robert Wadlow
-        const double lengteMin = 0.0;
-        public enum GewichtenSorten {None = -1, OnvoldoendeGewicht, NormalGewicht, PreObees, Obees, ErnstigeZwaarlijvigheid }
+        private const string inputError = "Invoer bevat de fout. Probeer het opnieuw...";
+        private const string inputGewichtVraag = "Tik aub uw gewicht in kg ?";
+        private const string inputLengteVraag = "Tik aub uw lengte in m ?";
+        private const double gewichtMax = 727.00; // de zwaarste man ter wereld ooit - Carol Yager
+        private const double gewichtMin = 0.0;
+        private const double lengteMax = 2.72; // de gootste man ter wereld ooit - Robert Wadlow
+        private const double lengteMin = 0.0;
+
+        public enum GewichtenSorten
+        { None = -1, OnvoldoendeGewicht, NormalGewicht, PreObees, Obees, ErnstigeZwaarlijvigheid }
+
         //
         public static GewichtenSorten GetGewichtenSorten(double bodyMassIndex)
         {
@@ -23,11 +22,11 @@ namespace BMI
             {
                 return GewichtenSorten.OnvoldoendeGewicht;
             }
-            else if ( bodyMassIndex < 24.9)
+            else if (bodyMassIndex < 24.9)
             {
                 return GewichtenSorten.NormalGewicht;
             }
-            else if ( bodyMassIndex < 29.9)
+            else if (bodyMassIndex < 29.9)
             {
                 return GewichtenSorten.PreObees;
             }
@@ -39,19 +38,20 @@ namespace BMI
             {
                 return GewichtenSorten.ErnstigeZwaarlijvigheid;
             }
-        return GewichtenSorten.None;
+            return GewichtenSorten.None;
         }
+
         public static bool BMIberekenaar(double gewicht, double lengte)
         {
-            string naarGelang ="";
-            if (gewicht > gewichtMin 
-                && gewicht <= gewichtMax 
+            string naarGelang = "";
+            if (gewicht > gewichtMin
+                && gewicht <= gewichtMax
                 && lengte > lengteMin
                 && lengte <= lengteMax)
             {
                 double bodyMassIndex = Math.Round(gewicht / Math.Pow(lengte, 2), 2);
                 switch (GetGewichtenSorten(bodyMassIndex))
-                { 
+                {
                     case GewichtenSorten.OnvoldoendeGewicht:
                         {
                             naarGelang = "Onder de 18,5: ondergewicht.";
@@ -88,7 +88,7 @@ namespace BMI
                             break;
                         }
                 }
-                
+
                 Console.WriteLine($"Uw BMI(Body Mass Index) is {bodyMassIndex} kg/m2.");
                 Console.WriteLine(naarGelang);
                 Console.ResetColor();
@@ -97,11 +97,11 @@ namespace BMI
             {
                 Console.WriteLine(inputError);
                 return false;
-
             }
             return true;
         }
-        static void Main(string[] args)
+
+        private static void Main(string[] args)
         {
             double inputLengte;
             double inputGewicht;
@@ -119,9 +119,7 @@ namespace BMI
                 {
                     inputCorrect = false;
                     Console.WriteLine(inputError);
-
                 }
-
         }
     }
 }

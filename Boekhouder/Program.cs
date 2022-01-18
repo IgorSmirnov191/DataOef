@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Globalization;
 
 namespace Boekhouder
 {
     internal class Program
     {
-        const string inputError = "Invoer bevat een fout. Probeer het opnieuw...";
-        static void Main(string[] args)
+        private const string inputError = "Invoer bevat een fout. Probeer het opnieuw...";
+
+        private static void Main(string[] args)
         {
             decimal balans = 0, debet = 0, credit = 0;
             int aantal = 0;
@@ -43,7 +39,6 @@ namespace Boekhouder
                         $"Oopbrengsten: {credit.ToString("#.00")} euro, " +
                         $"Kosten: {debet.ToString("#.00")} euro, " +
                         $"Gemiddelde: {(balans / aantal).ToString("#.00")} euro / bedraag ");
-
                 }
                 catch (System.IndexOutOfRangeException)
                 {
