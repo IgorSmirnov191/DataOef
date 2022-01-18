@@ -17,10 +17,13 @@ namespace OpDePoef
                     $" {poefKassa.ToString("##.##", CultureInfo.InvariantCulture)} euro");
             }
             Console.WriteLine("*************************");
-            Console.WriteLine($"Het totaal van  de poef is " +
-                $"{poefKassa.ToString("##.##", CultureInfo.InvariantCulture)}" +
-                $" en zal {Math.Round(poefKassa / 10)} " +
-                $"weken duren om volledig afbetaald te worden");
+            double saldo = poefKassa % 10;
+            int aantalWeken = saldo == 0 ? ((int)poefKassa / 10) : ((int)poefKassa / 10 + 1);
+            string saldoLastWeek = saldo > 0 ? $"Laatste week betaling zal zijn {saldo.ToString("##.##", CultureInfo.InvariantCulture)} euro" : "";
+            Console.WriteLine($"Het totaal van de poef is " +
+                $"{poefKassa.ToString("##.##", CultureInfo.InvariantCulture)} euro" +
+                $" en zal {aantalWeken} " +
+                $"weken duren om volledig afbetaald te worden. \n{saldoLastWeek}");
         }
     }
 }
