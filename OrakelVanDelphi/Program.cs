@@ -6,7 +6,6 @@ namespace OrakelVanDelphi
     {
         private const string inputError = "Invoer bevat een fout. Probeer het opnieuw...";
         private const string inputGeslacht = "Bent u een vrouw(v) of een man(m) ?";
-        private const string inputLeeftijdVraag = "Tik uw leeftijd aub ?";
 
         public static bool Orakeltje(char geslachtChar, int leeftijdValue)
         {
@@ -40,7 +39,7 @@ namespace OrakelVanDelphi
                     Console.Write(inputGeslacht);
                     cki_Key = Console.ReadKey();
                     Console.WriteLine();
-                    Console.Write(inputLeeftijdVraag);
+                    Console.Write("Tik uw leeftijd aub ?");
                     inputLeeftijd = int.Parse(Console.ReadLine());
                     isInputCorrect = Orakeltje(cki_Key.KeyChar, inputLeeftijd);
                 }
