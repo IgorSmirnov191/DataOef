@@ -7,12 +7,12 @@ namespace OrakelVanDelphi
         private const string inputError = "Invoer bevat een fout. Probeer het opnieuw...";
         private const string inputGeslacht = "Bent u een vrouw(v) of een man(m) ?";
         private const string inputLeeftijdVraag = "Tik uw leeftijd aub ?";
-        private const int leeftijdVrouwMax = 150;
-        private const int leeftijdManMax = 120;
 
         public static bool Orakeltje(char geslachtChar, int leeftijdValue)
         {
             Random rd_Orakel = new Random();
+            int leeftijdVrouwMax = 150;
+            int leeftijdManMax = 120;
             if (geslachtChar == 'v' || geslachtChar == 'V')
             {
                 Console.WriteLine($"Je zal nog {rd_Orakel.Next(5, leeftijdVrouwMax - leeftijdValue)} jaar leven.");
