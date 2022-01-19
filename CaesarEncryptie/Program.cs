@@ -4,12 +4,42 @@ namespace CaesarEncryptie
 {
     internal class Program
     {
-        private const string inputError = "Probeer het opnieuw...";
-        private const string inputFunctie = "Wilt u een geheime bericht schrijven(e), lezen(d) of stoppen(s) ?";
+        private const string messageRepeat = "Probeer het opnieuw";
         private const string inputCypherVraag = "Tik een cypher in aub ?";
         private const string inputTextVraag = "Voer een text in aub :";
         private const string alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+        /// <summary>
+        /// Enum with processing keys from menu CaesarEncryptie
+        /// </summary>
+        public enum UserKeys
+        { None = -1, Decrypt = 68, Encrypt = 69, Stop = 83 };
+
+        /// <summary>
+        /// Translate inputs user keys to processing keys
+        /// </summary>
+        /// <param name="KeyChar"></param>
+        /// <returns></returns>
+        public static UserKeys GetMenuControlKey(char KeyChar)
+        {
+            switch (KeyChar)
+            {
+                case ('d'):
+                case ('D'): return UserKeys.Decrypt;
+                case ('e'):
+                case ('E'): return UserKeys.Encrypt;
+                case ('s'):
+                case ('S'): return UserKeys.Stop;
+                default: break;
+            }
+            return UserKeys.None;
+        }
+
+        /// <summary>
+        /// Create encrypted alphabet from original latin alphabet and cypher value
+        /// </summary>
+        /// <param name="cypher"></param>
+        /// <returns></returns>
         public static char[] CreateAlphabet(int cypher)
         {
             string original = alfabet;
@@ -17,6 +47,12 @@ namespace CaesarEncryptie
             return original.ToCharArray();
         }
 
+        /// <summary>
+        /// Encrypt user message with Ceaser algorithm
+        /// </summary>
+        /// <param name="decrMessage"></param>
+        /// <param name="cypher"></param>
+        /// <returns></returns>
         public static char[] EncryptMessage(char[] decrMessage, int cypher)
         {
             char[] originalAlfabet = alfabet.ToCharArray();
@@ -37,6 +73,12 @@ namespace CaesarEncryptie
             return encrMessage.ToCharArray();
         }
 
+        /// <summary>
+        /// Decrypt user message with Caesar algorithm
+        /// </summary>
+        /// <param name="encrMessage"></param>
+        /// <param name="cypher"></param>
+        /// <returns></returns>
         public static char[] DecryptMessage(char[] encrMessage, int cypher)
         {
             char[] originalAlfabet = alfabet.ToCharArray();
@@ -62,38 +104,45 @@ namespace CaesarEncryptie
             ConsoleKeyInfo cki_Key;
             int inputCypher;
             string inputText;
-            bool isInputCorrect = false;
-            while (!isInputCorrect)
+            bool isProcessing = true;
+            while (isProcessing)
                 try
                 {
-                    Console.Write(inputFunctie);
+                    Console.Write("Wilt u een geheime bericht schrijven(e), lezen(d) of stoppen(s) ?");
                     cki_Key = Console.ReadKey();
                     Console.WriteLine();
-                    if ((cki_Key.KeyChar == 's' || cki_Key.KeyChar == 'S') &&
-                        cki_Key.KeyChar != 'e' && cki_Key.KeyChar != 'E' &&
-                           cki_Key.KeyChar != 'd' && cki_Key.KeyChar != 'D')
+                    switch (GetMenuControlKey(cki_Key.KeyChar))
                     {
-                        Console.WriteLine(inputError);
-                        break;
-                    }
-                    Console.Write(inputCypherVraag);
-                    inputCypher = int.Parse(Console.ReadLine());
-                    Console.Write(inputTextVraag);
-                    inputText = Console.ReadLine();
-
-                    if (cki_Key.KeyChar == 'e' || cki_Key.KeyChar == 'E')
-                    {
-                        Console.WriteLine(EncryptMessage(inputText.ToUpper().ToCharArray(), inputCypher));
-                    }
-                    else if (cki_Key.KeyChar == 'd' || cki_Key.KeyChar == 'D')
-                    {
-                        Console.WriteLine(DecryptMessage(inputText.ToUpper().ToCharArray(), inputCypher));
+                        case (UserKeys.Stop):
+                            {
+                                isProcessing = false;
+                                throw new Exception("Processing is gestopt. " + messageRepeat + " later");
+                            }
+                        case (UserKeys.Encrypt):
+                            {
+                                Console.Write(inputCypherVraag);
+                                inputCypher = int.Parse(Console.ReadLine());
+                                Console.Write(inputTextVraag);
+                                inputText = Console.ReadLine();
+                                Console.WriteLine(EncryptMessage(inputText.ToUpper().ToCharArray(), inputCypher));
+                                break;
+                            }
+                        case (UserKeys.Decrypt):
+                            {
+                                Console.Write(inputCypherVraag);
+                                inputCypher = int.Parse(Console.ReadLine());
+                                Console.Write(inputTextVraag);
+                                inputText = Console.ReadLine();
+                                Console.WriteLine(DecryptMessage(inputText.ToUpper().ToCharArray(), inputCypher));
+                                break;
+                            }
+                        default:
+                            throw new Exception("Een verkeerde toets was gedrukt. " + messageRepeat);
                     }
                 }
                 catch (Exception e)
                 {
-                    isInputCorrect = false;
-                    Console.WriteLine(inputError);
+                    Console.WriteLine(e.Message);
                 }
         }
     }
