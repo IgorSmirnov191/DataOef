@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeveringsBedrijf", "Leverin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaesarEncryptie", "CaesarEncryptie\CaesarEncryptie.csproj", "{A093F54F-5011-4D65-9A95-C55E22FA1A91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmDefault", "FilmDefault\FilmDefault.csproj", "{CDFB79F6-1EE2-4D51-B873-0CFD20C33C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuziekEnMethodenOpgave", "MuziekEnMethodenOpgave1\MuziekEnMethodenOpgave.csproj", "{EC2E5F2E-CD71-4F88-8E84-FE24BC6E6B27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +109,14 @@ Global
 		{A093F54F-5011-4D65-9A95-C55E22FA1A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A093F54F-5011-4D65-9A95-C55E22FA1A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A093F54F-5011-4D65-9A95-C55E22FA1A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFB79F6-1EE2-4D51-B873-0CFD20C33C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFB79F6-1EE2-4D51-B873-0CFD20C33C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFB79F6-1EE2-4D51-B873-0CFD20C33C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFB79F6-1EE2-4D51-B873-0CFD20C33C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2E5F2E-CD71-4F88-8E84-FE24BC6E6B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2E5F2E-CD71-4F88-8E84-FE24BC6E6B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2E5F2E-CD71-4F88-8E84-FE24BC6E6B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2E5F2E-CD71-4F88-8E84-FE24BC6E6B27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
