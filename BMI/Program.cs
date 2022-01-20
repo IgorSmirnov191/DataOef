@@ -7,10 +7,10 @@ namespace BMI
         private const string inputError = "Invoer bevat de fout. Probeer het opnieuw...";
         private const string inputGewichtVraag = "Tik aub uw gewicht in kg ?";
         private const string inputLengteVraag = "Tik aub uw lengte in m ?";
-        private const double gewichtMax = 727.00; // de zwaarste man ter wereld ooit - Carol Yager
-        private const double gewichtMin = 0.0;
-        private const double lengteMax = 2.72; // de gootste man ter wereld ooit - Robert Wadlow
-        private const double lengteMin = 0.0;
+        private const decimal gewichtMax = 727.00m; // de zwaarste man ter wereld ooit - Carol Yager
+        private const decimal gewichtMin = 0.0m;
+        private const decimal lengteMax = 2.72m; // de gootste man ter wereld ooit - Robert Wadlow
+        private const decimal lengteMin = 0.0m;
 
         public enum GewichtenSorten
         { None = -1, OnvoldoendeGewicht, NormalGewicht, PreObees, Obees, ErnstigeZwaarlijvigheid }
@@ -41,7 +41,7 @@ namespace BMI
             return GewichtenSorten.None;
         }
 
-        public static bool BMIberekenaar(double gewicht, double lengte)
+        public static bool BMIberekenaar(decimal gewicht, decimal lengte)
         {
             string naarGelang = "";
             if (gewicht > gewichtMin
@@ -49,7 +49,7 @@ namespace BMI
                 && lengte > lengteMin
                 && lengte <= lengteMax)
             {
-                double bodyMassIndex = Math.Round(gewicht / Math.Pow(lengte, 2), 2);
+                double bodyMassIndex = Math.Round((double)gewicht / Math.Pow(Convert.ToDouble(lengte), 2), 2);
                 switch (GetGewichtenSorten(bodyMassIndex))
                 {
                     case GewichtenSorten.OnvoldoendeGewicht:
@@ -103,16 +103,16 @@ namespace BMI
 
         private static void Main(string[] args)
         {
-            double inputLengte;
-            double inputGewicht;
+            decimal inputLengte = 0.0m;
+            decimal inputGewicht = 0.0m;
             bool inputCorrect = false;
             while (!inputCorrect)
                 try
                 {
                     Console.Write(inputLengteVraag);
-                    inputLengte = Double.Parse(Console.ReadLine());
+                    inputLengte = Convert.ToDecimal(Console.ReadLine());
                     Console.Write(inputGewichtVraag);
-                    inputGewicht = Double.Parse(Console.ReadLine());
+                    inputGewicht = Convert.ToDecimal(Console.ReadLine());
                     inputCorrect = BMIberekenaar(inputGewicht, inputLengte);
                 }
                 catch (Exception e)
